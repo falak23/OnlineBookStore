@@ -9,16 +9,10 @@ import { AppComponent, User } from "../app.component";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private http: HttpClient, private router: Router) {}
 
   model: User = {
     username: "",
     password: "",
-    firstname: "",
-    lastname: "",
-    email: "",
-    address: "",
-    phone: "",
     role: false,
   };
 
@@ -26,10 +20,9 @@ export class RegisterComponent implements OnInit {
   present: boolean = null;
   usernameAvailability: string;
   fontColor: string;
-
-  phoneValidation: boolean = true;
-  emailValidation: boolean = true;
   passwordValidation: boolean = true;
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   usernamePresent(): void {
     this.fontColor = "";
@@ -61,12 +54,11 @@ export class RegisterComponent implements OnInit {
       (res) => {
         AppComponent.modelUser = res;
         this.router.navigate(["login"]);
+      },
+      (err) => {
+        console.log([this.model]);
+        alert("An error has occurred while Registering");
       }
-      // ,
-      // (err) => {
-      //   console.log([this.model]);
-      //   alert("An error has occurred while Registering");
-      // }
     );
   }
 

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    if (sessionStorage.length > 0) this.router.navigate(["restaurants"]);
+    if (sessionStorage.length > 0) this.router.navigate(["menu"]);
   }
 
   sendFeedback(): void {
@@ -27,24 +27,22 @@ export class LoginComponent implements OnInit {
     let key = "userData";
     this.http.post<User>(url, this.model).subscribe(
       (res) => {
-        // localStorage.setItem(key,JSON.stringify(res));
         sessionStorage.setItem(key, JSON.stringify(res));
         if (res != null && !res.role) {
-          this.router.navigate(["restaurants"]);
+          this.router.navigate(["menu"]);
         }
         if (res != null && res.role) {
-          this.router.navigate(["restaurants"]);
+          this.router.navigate(["menu"]);
         }
         if (res == null) {
           this.message = "Username Or Password is Wrong";
           sessionStorage.clear();
         }
+      },
+      (err) => {
+        console.log([this.model]);
+        alert("An error has occurred while logging in");
       }
-      // ,
-      // (err) => {
-      //   console.log([this.model]);
-      //   alert("An error has occurred while logging in");
-      // }
     );
   }
 }

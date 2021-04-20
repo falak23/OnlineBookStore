@@ -13,8 +13,6 @@
               name="form"
               #f="ngForm"
               (ngSubmit)="
-                emailValidation &&
-                  phoneValidation &&
                   passwordValidation &&
                   f.form.valid &&
                   registerUser()
@@ -95,9 +93,7 @@
               <table class="align-items-center" style="padding-right: 10%">
                 <tr>
                   <td>
-                    <button type="submit" class="btn btn-success">
-                      <span> Register</span>
-                    </button> &nbsp; &nbsp;
+                    <button type="submit" class="btn btn-success">Register</button> &nbsp; &nbsp;
                   </td>
                   <br> <br> <br> <br>
                 </tr>

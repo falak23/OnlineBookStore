@@ -10,11 +10,6 @@ export class AppComponent {
   static modelUser: User = {
     username: "",
     password: "",
-    email: "",
-    phone: "",
-    firstname: "",
-    lastname: "",
-    address: "",
     role: null,
   };
 }
@@ -23,10 +18,5 @@ export class AppComponent {
 export class User {
   username: string;
   password: string;
-  firstname: string;
-  lastname: string;
-  email: string;
-  address: string;
-  phone: string;
   role: boolean;
 }
