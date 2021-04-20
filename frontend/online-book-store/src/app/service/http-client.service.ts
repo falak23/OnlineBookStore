@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../entity/User';
 import { Book } from '../entity/Book';
 
 
@@ -12,18 +11,6 @@ export class HttpClientService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getUsers() {
-    return this.httpClient.get<User[]>('http://localhost:8080/users/get');
-  }
-
-  addUser(newUser: User) {
-    return this.httpClient.post<User>('http://localhost:8080/users/add', newUser);
-  }
-
-  deleteUser(id) {
-    return this.httpClient.delete<User>('http://localhost:8080/users/' + id);
-  }
-
   getBooks() {
     return this.httpClient.get<Book[]>('http://localhost:8080/books/get');
   }
@@ -32,7 +19,7 @@ export class HttpClientService {
     return this.httpClient.post('http://localhost:8080/books/upload', selectedFile);
   }
 
-  addBook(newBook) {
+  addBook(newBook : Book) {
     return this.httpClient.post<Book>('http://localhost:8080/books/add', newBook);
   }
 

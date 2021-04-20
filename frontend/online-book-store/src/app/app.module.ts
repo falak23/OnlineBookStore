@@ -10,6 +10,10 @@ import { BooksComponent } from './admin/books/books.component';
 import { AddbookComponent } from './admin/books/addbook/addbook.component';
 import { ViewbookComponent } from './admin/books/viewbook/viewbook.component';
 import { ShopbookComponent } from './shopbook/shopbook.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { ShopbookComponent } from './shopbook/shopbook.component';
     BooksComponent,
     AddbookComponent,
     ViewbookComponent,
-    ShopbookComponent
+    ShopbookComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+body {
+  margin-left: 300px;
+   background-color: whitesmoke; 
+  background-repeat: no-repeat;
+  width: max-content;
+  color:black;
+}
+
+label {
+  display: block;
+  float: left;
+  padding: 5px 10px 0 0;
+}
+
+form div {
+  overflow: hidden;
+  margin: 0 0 5px 0;
+}

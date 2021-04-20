@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'online-store';
+  title = 'online-book-store';
+  static modelUser: User = {
+    username: "",
+    password: "",
+    email: "",
+    phone: "",
+    firstname: "",
+    lastname: "",
+    address: "",
+    role: null,
+  };
+}
+// ---------------------------------------------------------------------------------
+
+export class User {
+  username: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  email: string;
+  address: string;
+  phone: string;
+  role: boolean;
 }

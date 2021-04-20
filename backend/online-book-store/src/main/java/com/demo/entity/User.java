@@ -1,52 +1,41 @@
 package com.demo.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
 public class User {
 
 	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(name = "name")
-	private String name;
-
-	@Column(name = "password")
+	private String username;
 	private String password;
+	private boolean role;
 
-	@Column(name = "type")
-	private String type;
+	public User() {
 
-	public Long getId() {
-		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public User(String username, String password, boolean role) {
+		this.username = username;
+		this.password = password;
+		this.role = role;
 	}
 
-	public String getName() {
-		return name;
+	public boolean isAdmin() {
+		return role;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMerchant(boolean role) {
+		this.role = role;
 	}
 
-	public String getType() {
-		return type;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setUsername(String username) {
+		System.out.println("username: " + username);
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -57,4 +46,8 @@ public class User {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "User{" + "username='" + username + '\'' + ", password='" + password + '\'' + ",  admin=" + role + '}';
+	}
 }
