@@ -73,4 +73,21 @@ export class BooksComponent implements OnInit {
   viewBook(id: number) {
     this.router.navigate(['admin', 'books'], { queryParams: { id, action: 'view' } });
   }
+
+  _getBooks(): void {
+    this.httpClientService.getAllBooks().subscribe((data: any) => {
+      this.books = data.data;
+      console.log(this.books);
+    });
+  }
+  addToCart( id, quantity): void {
+    let payload = {
+      productId: id,
+      quantity,
+    };
+    this.httpClientService.addToCart(payload).subscribe(() => {
+      this._getBooks();
+      alert('Book Added');
+    });
+  }
 }

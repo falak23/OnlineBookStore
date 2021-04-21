@@ -52,39 +52,39 @@ export class ShopbookComponent implements OnInit {
     }
   }
 
-  addToCart(bookId) {
-    //retrieve book from books array using the book id
-    let book = this.books.find(book => {
-      return book.id === +bookId;
-    });
-    let cartData = [];
-    //retrieve cart data from localstorage
-    let data = localStorage.getItem('cart');
-    //prse it to json 
-    if (data !== null) {
-      cartData = JSON.parse(data);
-    }
-    // add the selected book to cart data
-    cartData.push(book);
-    //updated the cartBooks
-    this.updateCartData(cartData);
-    //save the updated cart data in localstorage
-    localStorage.setItem('cart', JSON.stringify(cartData));
-    //make the isAdded field of the book added to cart as true
-    book.isAdded = true;
-  }
+  // addToCart(bookId) {
+  //   //retrieve book from books array using the book id
+  //   let book = this.books.find(book => {
+  //     return book.id === +bookId;
+  //   });
+  //   let cartData = [];
+  //   //retrieve cart data from localstorage
+  //   let data = localStorage.getItem('cart');
+  //   //prse it to json 
+  //   if (data !== null) {
+  //     cartData = JSON.parse(data);
+  //   }
+  //   // add the selected book to cart data
+  //   cartData.push(book);
+  //   //updated the cartBooks
+  //   this.updateCartData(cartData);
+  //   //save the updated cart data in localstorage
+  //   localStorage.setItem('cart', JSON.stringify(cartData));
+  //   //make the isAdded field of the book added to cart as true
+  //   book.isAdded = true;
+  // }
 
-  updateCartData(cartData) {
-    this.cartBooks = cartData;
-  }
+  // updateCartData(cartData) {
+  //   this.cartBooks = cartData;
+  // }
 
-  goToCart() {
-    this.router.navigate(['/cart']);
-  }
+  // goToCart() {
+  //   this.router.navigate(['/cart']);
+  // }
 
-  emptyCart() {
-    this.cartBooks = [];
-    localStorage.clear();
-  }
+  // emptyCart() {
+  //   this.cartBooks = [];
+  //   localStorage.clear();
+  // }
 
 }

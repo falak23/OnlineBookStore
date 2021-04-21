@@ -44,7 +44,7 @@ export class AddbookComponent implements OnInit {
 
   saveBook() {
     //If there is no book id then it is an add book call else it is an edit book call
-    if (this.book.id == null) {
+    if (this.book.id === null) {
 
       const uploadData = new FormData();
       uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);

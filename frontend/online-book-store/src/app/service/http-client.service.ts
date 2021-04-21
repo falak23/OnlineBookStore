@@ -30,4 +30,20 @@ export class HttpClientService {
   updateBook(updatedBook: Book) {
     return this.httpClient.put<Book>('http://localhost:8080/books/update', updatedBook);
   }
+
+  getAllBooks() {
+    return this.httpClient.get('http://localhost:8080/book');
+  }
+  addToCart(payload) {
+    return this.httpClient.post('http://localhost:8080/cart', payload);
+  }
+  getCartItems() {
+    return this.httpClient.get('http://localhost:8080/cart');
+  }
+  increaseQty(payload) {
+    return this.httpClient.post('http://localhost:8080/cart', payload);
+  }
+  emptyCart() {
+    return this.httpClient.delete('http://localhost:8080/cart/empty-cart');
+  }
 }
