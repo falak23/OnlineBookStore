@@ -10,7 +10,7 @@ export class AppComponent {
   static modelUser: User = {
     username: "",
     password: "",
-    role: null,
+    // role: null,
   };
 }
 // ---------------------------------------------------------------------------------
@@ -18,5 +18,5 @@ export class AppComponent {
 export class User {
   username: string;
   password: string;
-  role: boolean;
+  // role: boolean;
 }

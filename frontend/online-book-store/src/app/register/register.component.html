@@ -1,17 +1,16 @@
 <body class="align-items-center">
-<div style="box-sizing: border-box; border: 2px solid gray; margin-left: 300px ; margin-top: 20px;">
-<br /><br />
-      <h1 class="align-items-center text-center">Registration</h1>
-    
-    <br /><br /><br/>
-    
-      <div class="container align-items-center" text-align="center">
-        <div class="row">
-          <div class="offset-3"></div>
-          <div class="col-md-12">
-            <form
+  <div style="box-sizing: border-box; border: 2px solid gray; margin-left: 300px ; margin-top: 20px;">
+    <br /><br />
+    <h1 class="align-items-center text-center">Registration</h1>
+
+    <br /><br /><br />
+
+    <div class="container align-items-center" text-align="center">
+      <div class="row">
+        <div class="offset-3"></div>
+        <div class="col-md-12">
+          <!-- <form
               name="form"
-              #f="ngForm"
               (ngSubmit)="
                   passwordValidation &&
                   f.form.valid &&
@@ -19,16 +18,22 @@
               "
               novalidate
               class="feedback-form"
-            >
-              <!-- UserName -->
-              <table class="align-items-center" text-align="center">
-                <div class="form-group">
-                  <tr>
-                    <td>
-                      <label for="username">Username</label>
-                    </td>
-                    <td>
-                      <input
+            > -->
+          <form [formGroup]="form" (ngSubmit)="
+                registerUser()
+            ">
+
+
+            <!-- UserName -->
+            <table class="align-items-center" text-align="center">
+              <div class="form-group">
+                <tr>
+                  <td>
+                    <label for="username">Username</label>
+                  </td>
+                  <td>
+                    <!-- <input
+                      formControlName="username"
                       width="100%"
                         type="text"
                         id="username"
@@ -41,42 +46,50 @@
                           'is-invalid': f.submitted && username.invalid
                         }"
                         required="required"
-                      />
-                    </td>
-                  </tr>
-                </div>
-                <br/>
-                <!-- Password -->
-                <div class="form-group">
-                  <tr>
-                    <td><label for="password">Password</label></td>
-                    <td>
-                      <input
+                      /> -->
+                    <input formControlName="username" ngModel width="100%" type="text" id="username"
+                      class="form-control" placeholder="Enter username" required="required">
+                      <small *ngIf="form.get('username').dirty && form.get('username').invalid" class="form-text text-danger"> Enter Valid Username</small>
+                  </td>
+                </tr>
+              </div>
+              <br />
+              <!-- Password -->
+              <div class="form-group">
+                <tr>
+                  <td><label for="password">Password</label></td>
+                  <td>
+                    <!-- <input
+                      formControlName="password"
                       width="100%"
                         type="password"
                         id="password"
                         class="form-control"
                         name="password"
                         placeholder="Enter password"
-                        [(ngModel)]="model.password"
+                         [(ngModel)]="model.password" 
                         #password="ngModel"
                        
                         [ngClass]="{
                           'is-invalid': f.submitted && password.invalid
                         }"
                         required="required"
-                      />
-                    </td>
-                  </tr>
-                </div>
-                <br/>
-                <div class="form-group">
+                      /> -->
+                    <input formControlName="password" width="100%" ngModel type="password" id="password"
+                      class="form-control" placeholder="Enter password" required="required">
+                      <small *ngIf="form.get('password').dirty && form.get('password').invalid" class="form-text text-danger"> Password should contain atleast 6 characters</small>
+                  </td>
+                </tr>
+              </div>
+              <br />
+              <!-- <div class="form-group">
                   <tr>
                     <td>
                       <label>User Type</label>
                     </td>
                     <td>
                       <select
+                      formControlName="type"
                         class="form-control"
                         [(ngModel)]="options"
                         name="options"
@@ -87,22 +100,22 @@
                       </select>
                     </td>
                   </tr>
-                </div>
-              </table>
-              <br />
-              <table class="align-items-center" style="padding-right: 10%">
-                <tr>
-                  <td>
-                    <button type="submit" class="btn btn-success">Register</button> &nbsp; &nbsp;
-                  </td>
-                  <br> <br> <br> <br>
-                </tr>
-              </table>
-            </form>
-          </div>
-          <br><br><br> <br>
-          <div class="offset-3"></div>
+                </div> -->
+            </table>
+            <br />
+            <table class="align-items-center" style="padding-right: 10%">
+              <tr>
+                <td>
+                  <button [disabled]="form.invalid" type="submit" class="btn btn-success">Register</button> &nbsp; &nbsp;
+                </td>
+                <br> <br> <br> <br>
+              </tr>
+            </table>
+          </form>
         </div>
+        <br><br><br> <br>
+        <div class="offset-3"></div>
       </div>
     </div>
+  </div>
 </body>

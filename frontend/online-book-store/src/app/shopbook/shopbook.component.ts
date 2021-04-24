@@ -24,7 +24,7 @@ export class ShopbookComponent implements OnInit {
     );
     //from localstorage retrieve the cart item
     let data = localStorage.getItem('cart');
-    //if this is not null convert it to JSON else initialize it as empty
+    // if this is not null convert it to JSON else initialize it as empty
     if (data !== null) {
       this.cartBooks = JSON.parse(data);
     } else {
@@ -52,39 +52,43 @@ export class ShopbookComponent implements OnInit {
     }
   }
 
-  // addToCart(bookId) {
-  //   //retrieve book from books array using the book id
-  //   let book = this.books.find(book => {
-  //     return book.id === +bookId;
-  //   });
-  //   let cartData = [];
-  //   //retrieve cart data from localstorage
-  //   let data = localStorage.getItem('cart');
-  //   //prse it to json 
-  //   if (data !== null) {
-  //     cartData = JSON.parse(data);
-  //   }
-  //   // add the selected book to cart data
-  //   cartData.push(book);
-  //   //updated the cartBooks
-  //   this.updateCartData(cartData);
-  //   //save the updated cart data in localstorage
-  //   localStorage.setItem('cart', JSON.stringify(cartData));
-  //   //make the isAdded field of the book added to cart as true
-  //   book.isAdded = true;
+  // addToCart(Book) {
+  //   this.books.push(Book);
   // }
 
-  // updateCartData(cartData) {
-  //   this.cartBooks = cartData;
-  // }
+  addToCart(bookId) {
+    //retrieve book from books array using the book id
+    let book = this.books.find(book => {
+      return book.id === +bookId;
+    });
+    let cartData = [];
+    //retrieve cart data from localstorage
+    let data = localStorage.getItem('cart');
+    //prse it to json 
+    if (data !== null) {
+      cartData = JSON.parse(data);
+    }
+    // add the selected book to cart data
+    cartData.push(book);
+    //updated the cartBooks
+    this.updateCartData(cartData);
+    //save the updated cart data in localstorage
+    localStorage.setItem('cart', JSON.stringify(cartData));
+    //make the isAdded field of the book added to cart as true
+     book.isAdded = true;
+  }
 
-  // goToCart() {
-  //   this.router.navigate(['/cart']);
-  // }
+  updateCartData(cartData) {
+    this.cartBooks = cartData;
+  }
 
-  // emptyCart() {
-  //   this.cartBooks = [];
-  //   localStorage.clear();
-  // }
+  goToCart() {
+    this.router.navigate(['/cart']);
+  }
+
+  emptyCart() {
+    this.cartBooks = [];
+    localStorage.clear();
+  }
 
 }
