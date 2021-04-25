@@ -8,31 +8,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.db.UserRepositoryImpl;
 import com.demo.entity.User;
+import com.demo.services.UserService;
 
 @RestController
+@RequestMapping("users")
 @CrossOrigin(origins = {"http://localhost:4200"})
-public class RegistrationController {
+public class UserController {
 
 	@Autowired
-	private UserRepositoryImpl userDao;
+	UserService userService;
 
-	@RequestMapping("/api/register")
-	public User showRegister() {
-		return new User();
-	}
 
 	@PostMapping("/register")
-	public User addUser(@RequestBody User user, Model model) {
-		System.out.println(user.toString());
-		System.out.println(model.toString());
-		userDao.register(user);
+	public User addUser(@RequestBody User user) {
+		System.out.println(user);
+		userService.addUser(user);
+		
 		return user;
 	}
 
-	@PostMapping("/checkUserName")
-	public boolean checkAvailability(@RequestBody String username, Model model) {
-		return userDao.usernameExists(username);
-	}
+	//@PostMapping("/checkUserName")
+//	public boolean checkAvailability(@RequestBody String username, Model model) {
+	//	return userDao.usernameExists(username);
+//	}
 }

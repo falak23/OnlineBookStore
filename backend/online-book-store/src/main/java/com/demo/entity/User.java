@@ -2,30 +2,34 @@ package com.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "user")
+
 public class User {
 
 	@Id
 	private String username;
 	private String password;
-	private boolean role;
+    private String role = "user";
 
 	public User() {
 
 	}
 
-	public User(String username, String password, boolean role) {
+	public User(String username, String password, String role) {
 		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
 
-	public boolean isAdmin() {
+
+	public String getRole() {
 		return role;
 	}
 
-	public void setMerchant(boolean role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 
@@ -48,6 +52,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User{" + "username='" + username + '\'' + ", password='" + password + '\'' + ",  admin=" + role + '}';
+		return "User [username=" + username + ", password=" + password + ", role=" + role + "]";
 	}
+
+
+	
 }

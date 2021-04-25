@@ -46,19 +46,19 @@ export class LoginComponent implements OnInit {
      
       
       console.log(res);
-      // this.router.navigate(["home"]);
-      if(res==1){
-        this.errorMessage= "You do not have an account";
-      }else if(res==2){
-        //this.router.navigate(['/afterlogin2/riderhome3/'+ this.myForm.value.email]);
-        this.router.navigate(['/home']) 
-       console.log("Welcome " + this.form.value.username + " !");
-      }else if(res==3){
-        this.errorMessage= "Wrong Password";
-      }
-            // else if(res==4){
-      //   this.router.navigate(['/admin/adminroot']);
+      this.router.navigate(["home"]);
+      // if(res==1){
+      //   this.errorMessage= "You do not have an account";
+      // }else if(res==2){
+      //   //this.router.navigate(['/afterlogin2/riderhome3/'+ this.myForm.value.email]);
+      //   this.router.navigate(['/home']) 
+      //  console.log("Welcome " + this.form.value.username + " !");
+      // }else if(res==3){
+      //   this.errorMessage= "Wrong Password";
       // }
+      //       // else if(res==4){
+      // //   this.router.navigate(['/admin/adminroot']);
+      // // }
 
     })
 }

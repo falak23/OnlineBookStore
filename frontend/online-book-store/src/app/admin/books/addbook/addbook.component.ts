@@ -20,7 +20,7 @@ export class AddbookComponent implements OnInit {
 
   public selectedFile;
   imgURL: any;
-
+ 
   constructor(private httpClientService: HttpClientService,
     private activedRoute: ActivatedRoute,
     private router: Router,

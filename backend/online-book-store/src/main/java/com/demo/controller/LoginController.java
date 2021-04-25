@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.db.UserRepositoryImpl;
+import com.demo.db.UserRepository;
 import com.demo.entity.Login;
 import com.demo.entity.User;
 
@@ -17,7 +17,7 @@ import com.demo.entity.User;
 public class LoginController {
 
 	@Autowired
-	private UserRepositoryImpl userDao;
+//	private UserRepository userDao;
 
 	@RequestMapping("/login")
 	public Login showLogin() {
@@ -27,7 +27,7 @@ public class LoginController {
 	@PostMapping("/login")
 	public User loginProcess(@RequestBody Login login, Model model) {
 		User user = null;
-		user = userDao.validateUser(login);
+//		user = userDao.validateUser(login);
 		if (user != null)
 			user.setPassword(null);
 		return user;

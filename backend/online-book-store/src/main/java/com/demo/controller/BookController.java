@@ -40,7 +40,7 @@ public class BookController {
 
 	@PostMapping("/add")
 	public void createBook(@RequestBody Book book) throws IOException {
-		book.setPicByte(this.bytes);
+		book.setpicByte(this.bytes);
 		bookRepository.save(book);
 		this.bytes = null;
 	}
