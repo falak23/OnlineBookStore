@@ -7,62 +7,31 @@
     <br />
     <H1 class="text-center" style="color: Blue">Login Page</H1>
     <br /><br />
-    <!-- <div text-align="center" style="color: #f44336">{{ message }}</div> -->
     <div class="container" text-align="center">
       <div class="row">
         <div class="offset-3"></div>
         <div class="col-md-12">
-          <!-- <form
-              name="form"
-              #f="ngForm"
-              (ngSubmit)="f.form.valid && sendFeedback()"
-              novalidate
-              class="feedback-form"
-            > -->
           <form [formGroup]="form" (ngSubmit)="getLogin()">
-            <!-- Name -->
+
+            <!-- UserName -->
             <div class="form-group">
               <label for="username">Username</label>
-              <!-- <input
-                  type="text"
-                  id="username"
-                  class="form-control"
-                  name="username"
-                  placeholder="username"
-                  [(ngModel)]="model.username"
-                  #username="ngModel"
-                  [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
-                  required
-                /> -->
-
               <input formControlName="username" ngModel type="text" id="username" class="form-control" name="username"
-                placeholder="username">
-                <small *ngIf="form.get('username').dirty && form.get('username').invalid"
-                class="form-text text-danger">Invalid usernam</small>
-
-
-              <!-- <div
-                  *ngIf="f.submitted && username.invalid"
-                  class="invalid-input"
-                > -->
-
-              <!-- <div *ngIf="username.errors?.required">username cannot be empty</div> -->
-              <!-- </div> -->
+                placeholder="username" required="required">
+              <small *ngIf="form.get('username').invalid"
+                class="form-text text-danger">Invalid username</small>
             </div>
             <!-- password -->
             <div class="form-group">
-              <label  for="password">Password</label>
+              <label for="password">Password</label>
               <input formControlName="password" ngModel type="password" id="password" class="form-control"
                 name="password" placeholder="password" required="required" />
-                <small *ngIf="form.get('password').dirty && form.get('password').invalid"
+              <small *ngIf="form.get('password').invalid"
                 class="form-text text-danger">Invalid password
-            </small>
-              <!-- <div *ngIf="f.submitted && password.invalid" class="invalid-input"> -->
-
-                <!-- <div *ngIf="password.errors?.required">password cannot be empty</div> -->
+              </small>
             </div>
 
-            <button  [disabled]="form.invalid" type="button" routerLink="/" class="btn btn-success">Login</button>
+            <button [disabled]="form.invalid" type="button" routerLink="/" class="btn btn-success">Login</button>
             <br> <br>
             <div>
               <p>Don't have an account?</p>
@@ -71,7 +40,7 @@
             <br /><br />
           </form>
         </div>
-        <p id="error">{{errorMessage}}</p> 
+        <p id="error">{{errorMessage}}</p>
         <div class="offset-3"></div>
       </div>
     </div>

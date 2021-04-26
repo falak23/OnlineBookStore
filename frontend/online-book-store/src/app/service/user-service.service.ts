@@ -17,7 +17,6 @@ export class UserServiceService {
     return this.http.get(`${this.host}/users/all`);
   }
   findUser(username,password) {
-    //console.log("message from server++"+JSON.stringify(this.http.post(`${this.host}/riders/validate/${email}`,password)));
     return this.http.post(`${this.host}/users/validate/${username}`,password);
   }
 

@@ -9,19 +9,8 @@
       <div class="row">
         <div class="offset-3"></div>
         <div class="col-md-12">
-          <!-- <form
-              name="form"
-              (ngSubmit)="
-                  passwordValidation &&
-                  f.form.valid &&
-                  registerUser()
-              "
-              novalidate
-              class="feedback-form"
-            > -->
-          <form [formGroup]="form" (ngSubmit)="
-                registerUser()
-            ">
+        
+          <form [formGroup]="form" (ngSubmit)="registerUser()">
 
 
             <!-- UserName -->
@@ -32,21 +21,6 @@
                     <label for="username">Username</label>
                   </td>
                   <td>
-                    <!-- <input
-                      formControlName="username"
-                      width="100%"
-                        type="text"
-                        id="username"
-                        class="form-control"
-                        name="username"
-                        placeholder="Enter username"
-                        [(ngModel)]="model.username"
-                        #username="ngModel"
-                        [ngClass]="{
-                          'is-invalid': f.submitted && username.invalid
-                        }"
-                        required="required"
-                      /> -->
                     <input formControlName="username" ngModel width="100%" type="text" id="username"
                       class="form-control" placeholder="Enter username" required="required">
                       <small *ngIf="form.get('username').dirty && form.get('username').invalid" class="form-text text-danger"> Enter Valid Username</small>
@@ -59,22 +33,6 @@
                 <tr>
                   <td><label for="password">Password</label></td>
                   <td>
-                    <!-- <input
-                      formControlName="password"
-                      width="100%"
-                        type="password"
-                        id="password"
-                        class="form-control"
-                        name="password"
-                        placeholder="Enter password"
-                         [(ngModel)]="model.password" 
-                        #password="ngModel"
-                       
-                        [ngClass]="{
-                          'is-invalid': f.submitted && password.invalid
-                        }"
-                        required="required"
-                      /> -->
                     <input formControlName="password" width="100%" ngModel type="password" id="password"
                       class="form-control" placeholder="Enter password" required="required">
                       <small *ngIf="form.get('password').dirty && form.get('password').invalid" class="form-text text-danger"> Password should contain atleast 6 characters</small>
@@ -82,25 +40,6 @@
                 </tr>
               </div>
               <br />
-              <!-- <div class="form-group">
-                  <tr>
-                    <td>
-                      <label>User Type</label>
-                    </td>
-                    <td>
-                      <select
-                      formControlName="type"
-                        class="form-control"
-                        [(ngModel)]="options"
-                        name="options"
-                        id="options"
-                      >
-                        <option>User</option>
-                        <option>Admin</option>
-                      </select>
-                    </td>
-                  </tr>
-                </div> -->
             </table>
             <br />
             <table class="align-items-center" style="padding-right: 10%">
