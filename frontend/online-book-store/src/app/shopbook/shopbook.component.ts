@@ -19,22 +19,10 @@ export class ShopbookComponent implements OnInit {
 
   constructor(private router: Router, private httpClientService: HttpClientService) { }
   
-  // getItems() {
-  //   this.router.navigate(["cart"]);
-  //   }
-
   ngOnInit() {
     this.httpClientService.getBooks().subscribe(
       response => this.handleSuccessfulResponse(response),
     );
-    //from localstorage retrieve the cart item
-    // let data = this.getItems();
-    // // if this is not null convert it to JSON else initialize it as empty
-    // if (data !== null) {
-    //   this.cartBooks = JSON.parse(data);
-    // } else {
-    //   this.cartBooks = [];
-    // }
   }
 
   // we will be taking the books response returned from the database
@@ -62,13 +50,6 @@ export class ShopbookComponent implements OnInit {
       return book.id === +id;
     });
     let cartData = [];
-    //retrieve cart data from localstorage
-    // let data = this.getItems();
-    // //parse it to json 
-    // if (data !== null) {
-    //   cartData = JSON.parse(data);
-    // }
-    // add the selected book to cart data
     cartData.push(book);
     //updated the cartBooks
     this.updateCartData(cartData);
@@ -77,10 +58,7 @@ export class ShopbookComponent implements OnInit {
     //make the isAdded field of the book added to cart as true
     book.isAdded = true;
   }
-
   updateCartData(cartData) {
     this.cartBooks = cartData;
   }
-
-
 }
