@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClientService } from '../service/http-client.service';
 import { Book } from '../entity/Book';
+import { Cart } from '../entity/Cart';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-shopbook',
@@ -16,20 +18,23 @@ export class ShopbookComponent implements OnInit {
   cartBooks: any;
 
   constructor(private router: Router, private httpClientService: HttpClientService) { }
-
+  
+  // getItems() {
+  //   this.router.navigate(["cart"]);
+  //   }
 
   ngOnInit() {
     this.httpClientService.getBooks().subscribe(
       response => this.handleSuccessfulResponse(response),
     );
     //from localstorage retrieve the cart item
-    let data = localStorage.getItem('cart');
-    // if this is not null convert it to JSON else initialize it as empty
-    if (data !== null) {
-      this.cartBooks = JSON.parse(data);
-    } else {
-      this.cartBooks = [];
-    }
+    // let data = this.getItems();
+    // // if this is not null convert it to JSON else initialize it as empty
+    // if (data !== null) {
+    //   this.cartBooks = JSON.parse(data);
+    // } else {
+    //   this.cartBooks = [];
+    // }
   }
 
   // we will be taking the books response returned from the database
@@ -58,11 +63,11 @@ export class ShopbookComponent implements OnInit {
     });
     let cartData = [];
     //retrieve cart data from localstorage
-    let data = localStorage.getItem('cart');
-    //parse it to json 
-    if (data !== null) {
-      cartData = JSON.parse(data);
-    }
+    // let data = this.getItems();
+    // //parse it to json 
+    // if (data !== null) {
+    //   cartData = JSON.parse(data);
+    // }
     // add the selected book to cart data
     cartData.push(book);
     //updated the cartBooks
@@ -76,5 +81,6 @@ export class ShopbookComponent implements OnInit {
   updateCartData(cartData) {
     this.cartBooks = cartData;
   }
+
 
 }

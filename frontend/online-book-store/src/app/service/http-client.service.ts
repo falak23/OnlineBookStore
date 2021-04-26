@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../entity/Book';
+import { Cart } from '../entity/Cart';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientService {
-
+  
   constructor(private httpClient: HttpClient) {
   }
 
@@ -31,14 +32,15 @@ export class HttpClientService {
     return this.httpClient.put<Book>('http://localhost:8080/books/update', updatedBook);
   }
 
-  getAllBooks() {
-    return this.httpClient.get('http://localhost:8080/book');
-  }
+  // getAllBooks() {
+  //   return this.httpClient.get<Book[]>('http://localhost:8080/book');
+  // }
+
   addToCart(payload) {
     return this.httpClient.post('http://localhost:8080/cart', payload);
   }
   getCartItems() {
-    return this.httpClient.get('http://localhost:8080/cart');
+    return this.httpClient.get<Cart[]>('http://localhost:8080/cart');
   }
   increaseQty(payload) {
     return this.httpClient.post('http://localhost:8080/cart', payload);

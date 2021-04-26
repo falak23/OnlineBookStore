@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../entity/Book';
 import { HttpClientService } from '../service/http-client.service';
+import { ShopbookComponent } from '../shopbook/shopbook.component';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',

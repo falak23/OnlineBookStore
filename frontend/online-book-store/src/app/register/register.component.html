@@ -21,9 +21,9 @@
                     <label for="username">Username</label>
                   </td>
                   <td>
-                    <input formControlName="username" ngModel width="100%" type="text" id="username"
+                    <input formControlName="username"  width="100%" type="text" id="username"
                       class="form-control" placeholder="Enter username" required="required">
-                      <small *ngIf="form.get('username').dirty && form.get('username').invalid" class="form-text text-danger"> Enter Valid Username</small>
+                      <small *ngIf="form.get('username').invalid" class="form-text text-danger"> Enter Valid Username</small>
                   </td>
                 </tr>
               </div>
@@ -33,9 +33,9 @@
                 <tr>
                   <td><label for="password">Password</label></td>
                   <td>
-                    <input formControlName="password" width="100%" ngModel type="password" id="password"
+                    <input formControlName="password" width="100%"  type="password" id="password"
                       class="form-control" placeholder="Enter password" required="required">
-                      <small *ngIf="form.get('password').dirty && form.get('password').invalid" class="form-text text-danger"> Password should contain atleast 6 characters</small>
+                      <small *ngIf="form.get('password').invalid" class="form-text text-danger"> Password should contain atleast 6 characters</small>
                   </td>
                 </tr>
               </div>

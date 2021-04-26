@@ -16,7 +16,7 @@
             <!-- UserName -->
             <div class="form-group">
               <label for="username">Username</label>
-              <input formControlName="username" ngModel type="text" id="username" class="form-control" name="username"
+              <input formControlName="username" type="text" id="username" class="form-control" name="username"
                 placeholder="username" required="required">
               <small *ngIf="form.get('username').invalid"
                 class="form-text text-danger">Invalid username</small>
@@ -24,7 +24,7 @@
             <!-- password -->
             <div class="form-group">
               <label for="password">Password</label>
-              <input formControlName="password" ngModel type="password" id="password" class="form-control"
+              <input formControlName="password" type="password" id="password" class="form-control"
                 name="password" placeholder="password" required="required" />
               <small *ngIf="form.get('password').invalid"
                 class="form-text text-danger">Invalid password
