@@ -28,8 +28,4 @@ public class UserController {
 		return user;
 	}
 
-	//@PostMapping("/checkUserName")
-//	public boolean checkAvailability(@RequestBody String username, Model model) {
-	//	return userDao.usernameExists(username);
-//	}
 }

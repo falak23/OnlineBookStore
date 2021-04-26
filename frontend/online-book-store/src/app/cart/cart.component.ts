@@ -9,7 +9,6 @@ import { HttpClientService } from '../service/http-client.service';
 export class CartComponent implements OnInit {
   books = [];
   
- 
   constructor(private http: HttpClientService) {}
   _getCart(): void {
     this.http.getCartItems().subscribe((data: any) => {

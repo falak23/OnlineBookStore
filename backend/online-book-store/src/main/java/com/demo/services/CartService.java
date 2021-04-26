@@ -7,11 +7,6 @@ import com.demo.entity.Cart;
 
 public class CartService {
 	CartRepository cartRepository;
-//	Book book;
-//	Long id = book.id;
-//	public Cart addToCart(id) {
-//	        return cartRepository.save(book);
-//	    }
 	
 	public List<Cart> getItems() {
 		return (List<Cart>) cartRepository.findAll();
