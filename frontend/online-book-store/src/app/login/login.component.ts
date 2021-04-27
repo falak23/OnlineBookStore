@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  message: string = null;
+  // message: string = null;
   errorMessage: string;
 
   constructor(private http: HttpClient, private router: Router, private userService: UserServiceService) {

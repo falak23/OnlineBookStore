@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './cart/cart.component';
+// import { CartComponent } from './cart/cart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    CartComponent
+    // CartComponent
   ],
   imports: [
     BrowserModule,

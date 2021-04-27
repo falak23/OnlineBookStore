@@ -25,6 +25,7 @@ UserRepository userRepository;
 		return user;
 	}
 	
+	
 	public List<User> getUsers() {
 		return (List<User>) userRepository.findAll();
 	}
