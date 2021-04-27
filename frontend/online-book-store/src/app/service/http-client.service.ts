@@ -32,6 +32,11 @@ export class HttpClientService {
     return this.httpClient.put<Book>('http://localhost:8080/books/update', updatedBook);
   }
 
+  findBook(id) {
+    return this.httpClient.get<Book>('http://localhost:8080/books/' + id);
+  }
+
+
   // getAllBooks() {
   //   return this.httpClient.get<Book[]>('http://localhost:8080/book');
   // }
@@ -39,13 +44,13 @@ export class HttpClientService {
   addToCart(payload) {
     return this.httpClient.post('http://localhost:8080/cart', payload);
   }
-  getCartItems() {
-    return this.httpClient.get<Cart[]>('http://localhost:8080/cart');
-  }
-  increaseQty(payload) {
-    return this.httpClient.post('http://localhost:8080/cart', payload);
-  }
-  emptyCart() {
-    return this.httpClient.delete('http://localhost:8080/cart/empty-cart');
-  }
+  // getCartItems() {
+  //   return this.httpClient.get<Cart[]>('http://localhost:8080/cart');
+  // }
+  // increaseQty(payload) {
+  //   return this.httpClient.post('http://localhost:8080/cart', payload);
+  // }
+  // emptyCart() {
+  //   return this.httpClient.delete('http://localhost:8080/cart/empty-cart');
+  // }
 }

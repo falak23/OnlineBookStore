@@ -4,6 +4,7 @@ import { HttpClientService } from '../service/http-client.service';
 import { Book } from '../entity/Book';
 import { Cart } from '../entity/Cart';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-shopbook',
@@ -44,21 +45,8 @@ export class ShopbookComponent implements OnInit {
       this.books.push(bookwithRetrievedImageField);
     }
   }
-
-  addToCart(id) {
-    let book = this.books.find(book => {
-      return book.id === +id;
-    });
-    let cartData = [];
-    cartData.push(book);
-    //updated the cartBooks
-    this.updateCartData(cartData);
-    //save the updated cart data in localstorage
-    localStorage.setItem('cart', JSON.stringify(cartData));
-    //make the isAdded field of the book added to cart as true
-    book.isAdded = true;
+    successAlertBox() {
+      Swal.fire('Whooa!', 'You have bought this book!', 'success')
   }
-  updateCartData(cartData) {
-    this.cartBooks = cartData;
-  }
+   
 }

@@ -2,31 +2,8 @@
     <div class="col-md-2">
         <h1>Books</h1>
     </div>
-
-
-    <!-- <div class="col-md-10 custom-products-cart-container">
-        <div class="offset-md-8">
-            <ul class="nav navbar-nav navbar-right">
-
-                <li class="dropdown">
-                    <br>
-                    <ul class="dropdown-menu dropdown-cart" role="menu">
-                        <li *ngFor="let item of books">
-                            <div class="item product-cart-item row">
-                                <div class="col-md-8" *ngIf="item">{{item.name}}</div>
-                                <div class="col-md-4" *ngIf="item"><strong>${{item.price}}</strong></div>
-                            </div>
-                        </li>
-                        <hr>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div> -->
-
-
-
 </div>
+
 <br>
 <hr>
 <br>
@@ -42,7 +19,7 @@
                     <p style="margin-left: 60px">{{book.author}}</p>
                 </div>
                 <div class="offset-md-4 col-md-4">
-                    <button class="btn btn-primary btn-sm" (click)="addToCart(book.id)">Add To Cart</button>
+                    <button class="btn btn-primary btn-sm" (click)="successAlertBox()">Buy</button>
                 </div>
             </div>
         </div>
