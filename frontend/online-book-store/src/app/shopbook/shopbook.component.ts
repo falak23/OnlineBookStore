@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClientService } from '../service/http-client.service';
 import { Book } from '../entity/Book';
-import { Cart } from '../entity/Cart';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
@@ -46,7 +45,7 @@ export class ShopbookComponent implements OnInit {
     }
   }
     successAlertBox() {
-      Swal.fire('Whooa!', 'You have bought this book!', 'success')
+      Swal.fire('Whooa!', 'You have purchased this book!', 'success')
   }
    
 }

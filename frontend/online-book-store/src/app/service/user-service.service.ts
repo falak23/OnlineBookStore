@@ -16,8 +16,12 @@ export class UserServiceService {
   getUsers() {
     return this.http.get(`${this.host}/users/all`);
   }
-  findUser(username,password) {
-    return this.http.post(`${this.host}/users/validate/${username}`,password);
+  findUser(username) {
+    return this.http.get(`${this.host}/users/${username}`);
+  }
+
+  getUserLogin(username, password){
+    return this.http.get(`${this.host}/users/login/${username}`);
   }
 
 }

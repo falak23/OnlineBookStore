@@ -45,6 +45,14 @@ public class BookController {
 		this.bytes = null;
 	}
 	
+	@GetMapping(path = { "/{id}" })
+	public Book findBook(@PathVariable("id") long id) {
+		Book book = bookRepository.getOne(id);
+		bookRepository.findById(id);
+		return book;
+	}
+
+	
 	@DeleteMapping(path = { "/{id}" })
 	public Book deleteBook(@PathVariable("id") long id) {
 		Book book = bookRepository.getOne(id);

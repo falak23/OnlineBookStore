@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../entity/Book';
-import { Cart } from '../entity/Cart';
 
 
 @Injectable({
@@ -32,18 +31,18 @@ export class HttpClientService {
     return this.httpClient.put<Book>('http://localhost:8080/books/update', updatedBook);
   }
 
-  findBook(id) {
-    return this.httpClient.get<Book>('http://localhost:8080/books/' + id);
-  }
+  // findBook(id) {
+  //   return this.httpClient.get<Book>('http://localhost:8080/books/' + id);
+  // }
 
 
   // getAllBooks() {
   //   return this.httpClient.get<Book[]>('http://localhost:8080/book');
   // }
 
-  addToCart(payload) {
-    return this.httpClient.post('http://localhost:8080/cart', payload);
-  }
+  // addToCart(payload) {
+  //   return this.httpClient.post('http://localhost:8080/cart', payload);
+  // }
   // getCartItems() {
   //   return this.httpClient.get<Cart[]>('http://localhost:8080/cart');
   // }

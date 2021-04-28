@@ -16,6 +16,9 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 // import { CartComponent } from './cart/cart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { RootComponent } from './root/root.component';
+import { AfterloginComponent } from './afterlogin/afterlogin.component';
+import { AdminrootComponent } from './admin/adminroot/adminroot.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    // CartComponent
+    // RootComponent,
+    AfterloginComponent,
+    AdminrootComponent,
   ],
   imports: [
     BrowserModule,

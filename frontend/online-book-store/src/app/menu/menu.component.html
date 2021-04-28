@@ -1,7 +1,7 @@
 <header>
   <div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div><a class="btn btn-lg btn-dark" routerLink="/">OnlineBookStore</a></div>
+      <div><a class="btn btn-lg btn-dark" routerLink="/">OnlineBookStore</a></div> &nbsp;
       <div><a class="btn btn-lg btn-dark" role="button" routerLink="/shop">Shop</a></div>&nbsp;
 
       <div class="dropdown">
@@ -15,10 +15,12 @@
         </ul>
       </div>
       &nbsp; &nbsp;
-      <!-- <div><a routerLink="/cart" role="button" class="btn btn-lg btn-dark">Cart </a></div> &nbsp; -->
      
       <div><a class="btn btn-lg btn-dark" role="button" routerLink="/register">Register</a></div>&nbsp;
       <div><a class="btn btn-lg btn-dark" role="button" routerLink="/login">Login</a></div>&nbsp;
     </nav>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
   </div>
 </header>

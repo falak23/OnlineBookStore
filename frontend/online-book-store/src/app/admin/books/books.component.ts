@@ -80,14 +80,14 @@ export class BooksComponent implements OnInit {
       console.log(this.books);
     });
   }
-  addToCart( id, quantity): void {
-    let payload = {
-      productId: id,
-      quantity,
-    };
-    this.httpClientService.addToCart(payload).subscribe(() => {
-      this._getBooks();
-      alert('Book Added');
-    });
-  }
+  // addToCart( id, quantity): void {
+  //   let payload = {
+  //     productId: id,
+  //     quantity,
+  //   };
+  //   this.httpClientService.addToCart(payload).subscribe(() => {
+  //     this._getBooks();
+  //     alert('Book Added');
+  //   });
+  // }
 }

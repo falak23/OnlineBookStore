@@ -26,10 +26,23 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  getLogin() {
-    this.userService.findUser(this.form.value.username, this.form.value.password)
+  getLogin() : void{
+    console.log(JSON.stringify(this.form.value));
+
+    this.userService.findUser(this.form.value.username)
       .subscribe((res: any) => {
-        console.log(res);
+           console.log(res);
+           if (res === 1) {
+            this.errorMessage = "You do not have an account";
+          } else if (res === 2) {
+            this.errorMessage = "User Login Successful!";
+            this.router.navigate(["afterlogin"]);
+          } else if (res === 3) {
+            this.errorMessage = "Wrong Password";
+          } else if (res === 4) {
+            this.errorMessage = "Admin Login Successful!";
+            this.router.navigate(['/admin/adminroot']);
+          }
         this.router.navigate(["home"]);
       })
   }
